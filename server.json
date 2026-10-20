@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.codeblockssk/sosflights",
   "title": "SOS Flights",
-  "description": "Live reroutes, desk scripts, airport help and EU261/UK261/US DOT rights for disrupted flights, plus expert cases.",
+  "description": "Live reroutes, desk scripts, airport help and EU261/UK261/US DOT rights for disrupted flights.",
   "version": "0.1.0",
   "websiteUrl": "https://www.sosflights.help/en/connect",
   "repository": {
