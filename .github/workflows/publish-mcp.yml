@@ -1,0 +1,27 @@
+# Publishes server.json to the official MCP Registry (registry.modelcontextprotocol.io)
+# whenever it changes on main. Auth: GitHub OIDC for the io.github.codeblockssk namespace, no secrets.
+# The registry rejects an already-published version: bump "version" in server.json for every change.
+name: Publish to MCP Registry
+
+on:
+  push:
+    branches: [main]
+    paths: [server.json]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install mcp-publisher
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+      - name: Login (GitHub OIDC)
+        run: ./mcp-publisher login github-oidc
+      - name: Publish
+        run: ./mcp-publisher publish
