@@ -38,4 +38,4 @@ See [CONNECT.md](CONNECT.md) for Claude, ChatGPT, Cursor, VS Code and other MCP 
 
 ## License
 
-The contents of this repository (documentation and metadata) are MIT licensed. The SOS Flights service itself is operated by Codeblocks s.r.o.
+The contents of this repository (documentation and metadata) are MIT licensed. The SOS Flights service itself is operated by pelicantravel.com s.r.o.
