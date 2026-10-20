@@ -10,6 +10,9 @@
     "source": "github"
   },
   "remotes": [
-    { "type": "streamable-http", "url": "https://www.sosflights.help/mcp" }
+    {
+      "type": "streamable-http",
+      "url": "https://www.sosflights.help/mcp"
+    }
   ]
 }
