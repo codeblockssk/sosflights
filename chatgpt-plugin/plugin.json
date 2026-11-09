@@ -22,7 +22,7 @@
     "com.openai": {
       "interface": {
         "displayName": "SOS Flights",
-        "shortDescription": "Get to your destination when your flight breaks",
+        "shortDescription": "Help when your flight breaks",
         "longDescription": "SOS Flights helps travellers with a cancelled, delayed, overbooked or missed-connection flight find the fastest realistic way to their destination. Check EU261, UK261 and US DOT rights, get the exact sentences to say at the airline desk, find hotels and nearby airports tonight, and search live alternative flights. Nothing is booked. When the airline won't help, prepare a case for the SOS Flights expert team; it opens only after you confirm.",
         "developerName": "pelicantravel.com s.r.o.",
         "category": "Travel",
