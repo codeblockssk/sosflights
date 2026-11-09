@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sosflights": {
+      "type": "http",
+      "url": "https://www.sosflights.help/mcp"
+    }
+  }
+}

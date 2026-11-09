@@ -1,0 +1,123 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sos-flights",
+  "version": "0.1.0",
+  "description": "Help when a flight is cancelled, delayed, overbooked or a connection is missed: passenger rights, desk script, airport help, live alternatives and an expert case.",
+  "author": {
+    "name": "pelicantravel.com s.r.o.",
+    "email": "info@sosflights.help",
+    "url": "https://www.sosflights.help/"
+  },
+  "homepage": "https://www.sosflights.help/en/connect",
+  "repository": "https://github.com/codeblockssk/sosflights",
+  "license": "MIT",
+  "keywords": [
+    "travel",
+    "flights",
+    "eu261",
+    "passenger-rights",
+    "flight-delay"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SOS Flights",
+        "shortDescription": "Get to your destination when your flight breaks",
+        "longDescription": "SOS Flights helps travellers with a cancelled, delayed, overbooked or missed-connection flight find the fastest realistic way to their destination. Check EU261, UK261 and US DOT rights, get the exact sentences to say at the airline desk, find hotels and nearby airports tonight, and search live alternative flights. Nothing is booked. When the airline won't help, prepare a case for the SOS Flights expert team; it opens only after you confirm.",
+        "developerName": "pelicantravel.com s.r.o.",
+        "category": "Travel",
+        "capabilities": [
+          "Check passenger rights",
+          "Desk script",
+          "Airport help",
+          "Find alternative flights",
+          "Expert cases"
+        ],
+        "websiteURL": "https://www.sosflights.help/",
+        "supportURL": "https://www.sosflights.help/en/connect",
+        "privacyPolicyURL": "https://www.sosflights.help/en/privacy",
+        "termsOfServiceURL": "https://www.sosflights.help/terms",
+        "defaultPrompt": [
+          "My Ryanair flight from Bratislava to London was cancelled. What are my rights?",
+          "What should I say at the Lufthansa desk? My flight to New York is delayed 5 hours.",
+          "I'm stuck at Vienna airport overnight. Where can I sleep and who pays?"
+        ],
+        "brandColor": "#FF8800",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "onboardingSkill": "./skills/flight-disruption-help/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Rights for a cancelled EU flight",
+              "prompt": "My Ryanair flight BTS to STN today was cancelled at the gate. What am I entitled to?",
+              "tools_triggered": "sos_check_rights",
+              "expected_behavior": "States EU261 applies, refund or re-routing options, care owed and the compensation range with its conditions; says advice only."
+            },
+            {
+              "description": "Desk script",
+              "prompt": "Give me what to say at the Austrian Airlines desk, my VIE to LHR flight is cancelled. In German please.",
+              "tools_triggered": "sos_desk_script",
+              "expected_behavior": "Returns 1-3 polite German sentences asking for re-routing/care, citing EU261."
+            },
+            {
+              "description": "Airport help tonight",
+              "prompt": "I'm stuck overnight at Frankfurt airport after a cancellation. Where can I sleep?",
+              "tools_triggered": "sos_airport_help",
+              "expected_behavior": "Lists hotel, lounge and transfer search links and who pays under EU rules; books nothing."
+            },
+            {
+              "description": "Alternative flights",
+              "prompt": "Find me another way from Vienna to London tomorrow, my flight was cancelled.",
+              "tools_triggered": "sos_find_alternatives",
+              "expected_behavior": "Lists live one-way options incl. nearby airports, ordered by earliest arrival, with price and stops; books nothing."
+            },
+            {
+              "description": "Prepare an expert case",
+              "prompt": "The airline won't rebook me. I want the SOS Flights team to take over. Email test@example.com, phone +421900000000, WhatsApp.",
+              "tools_triggered": "sos_prepare_case",
+              "expected_behavior": "Shows what will be submitted and the price, and asks for confirmation; does not open the case without it."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Booking a flight",
+              "prompt": "Book me the 18:05 flight to London with my card."
+            },
+            {
+              "description": "Legal guarantee",
+              "prompt": "Guarantee I will get 600 euros and file the claim for me."
+            },
+            {
+              "description": "Unrelated request",
+              "prompt": "Write me a poem about the sea."
+            }
+          ]
+        },
+        "commerce": true,
+        "commerce_description": "The free tools do not charge anything. A case handled by the SOS Flights expert team is a one-time paid service (or covered by a travel-agency access code); the payment happens on the SOS Flights payment page after the user confirms, not inside ChatGPT."
+      },
+      "publication": {
+        "countries": [
+          "SK",
+          "CZ",
+          "AT",
+          "DE",
+          "PL",
+          "HU",
+          "GB",
+          "IE",
+          "FR",
+          "IT",
+          "ES",
+          "NL",
+          "BE",
+          "US"
+        ],
+        "release_notes": "Initial release: passenger rights, desk script, airport help, live alternatives and SOS Flights expert cases."
+      }
+    }
+  }
+}

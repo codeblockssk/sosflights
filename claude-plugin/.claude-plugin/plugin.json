@@ -1,0 +1,11 @@
+{
+  "name": "sos-flights",
+  "displayName": "SOS Flights",
+  "version": "0.1.0",
+  "description": "Help when a flight is cancelled, delayed, overbooked or a connection is missed: EU261/UK261/US DOT rights, what to say at the airline desk, airport help tonight, live alternative flights, and an SOS Flights expert case when the airline won't help.",
+  "author": { "name": "pelicantravel.com s.r.o.", "url": "https://www.sosflights.help/", "email": "info@sosflights.help" },
+  "homepage": "https://www.sosflights.help/en/connect",
+  "repository": "https://github.com/codeblockssk/sosflights",
+  "license": "MIT",
+  "keywords": ["travel", "flights", "flight-cancelled", "flight-delay", "eu261", "uk261", "passenger-rights"]
+}

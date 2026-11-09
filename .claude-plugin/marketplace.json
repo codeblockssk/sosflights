@@ -1,0 +1,12 @@
+{
+  "name": "sosflights",
+  "owner": { "name": "pelicantravel.com s.r.o.", "email": "info@sosflights.help" },
+  "metadata": { "description": "SOS Flights plugins for Claude" },
+  "plugins": [
+    {
+      "name": "sos-flights",
+      "source": "./claude-plugin",
+      "description": "Help when a flight is cancelled, delayed, overbooked or a connection is missed: rights, desk script, airport help, live alternatives and an expert case."
+    }
+  ]
+}
